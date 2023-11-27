@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
@@ -19,9 +18,9 @@ jobs:
           cache: 'npm'
       - run: npm i
       - run: npm run build
+
   unit-tests:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
@@ -30,4 +29,4 @@ jobs:
           node-version: '12.x'
           cache: 'npm'
       - run: npm i
-      - run: npm run test
+      - run: npm run tests
