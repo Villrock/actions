@@ -1,0 +1,12 @@
+
+https://www.magnolia-cms.com/blog/building-a-continuous-delivery-pipeline-with-github-and-helm-to-deploy-magnolia-to-kubernetes.html
+
+
+## run forwarding 
+minikube tunnel
+
+## run port forward
+minikube service node-app-service --url
+
+
+helm upgrade node-app2 helm/ -f helm/prod.yml

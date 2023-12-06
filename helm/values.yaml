@@ -1,0 +1,6 @@
+# My Custom values for Helm Chart
+container:
+  image: adv4000/k8sphp:latest #willrock/js-actions-app
+  version: 0.0.0
+
+replicaCount: 1

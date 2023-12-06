@@ -1,0 +1,4 @@
+container:
+  image: willrock/js-actions-app # other app
+  
+replicaCount: 2 # other replica number 
