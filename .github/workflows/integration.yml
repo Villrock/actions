@@ -32,3 +32,11 @@ jobs:
   #         cache: 'npm'
   #     - run: npm i
   #     - run: npm run test
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker build . -t willrock/js-actions-app
+      - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u ${{secrets.DOCKER_USER}} --password-stdin
+      - run: docker push willrock/js-actions-app
