@@ -3,24 +3,24 @@ name: Release
 on:
   push:
     branches: 
-    #  - main
-      - updates
+      - main
+    #  - updates
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  # deploy:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
-      - run: docker build . -t willrock/js-actions-app
-      - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u ${{secrets.DOCKER_USER}} --password-stdin
-      - run: docker push willrock/js-actions-app
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - run: docker build . -t willrock/js-actions-app
+  #     - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u ${{secrets.DOCKER_USER}} --password-stdin
+  #     - run: docker push willrock/js-actions-app
 
 
   helm-lint:
     name: Helm lint and release
     runs-on: ubuntu-latest
-    needs: deploy
+   # needs: deploy
   
     steps:
       - uses: actions/checkout@v2

@@ -8,5 +8,12 @@ minikube tunnel
 ## run port forward
 minikube service node-app-service --url
 
-
+###
 helm upgrade node-app2 helm/ -f helm/prod.yml
+
+###
+kubectl proxy --port=8080 --accept-hosts='.*\.ngrok.io
+$' &
+
+###
+ngrok
